@@ -11,8 +11,8 @@ const errorHandler =
 require("./middleware/errorHandler");
 
 
-app.use(cors());
 app.use(express.json());
+app.use(cors());
 
 app.use("/recipes", recipeRoutes);
 // ERROR HANDLER GOES HERE
@@ -29,4 +29,3 @@ mongoose.connect(process.env.MONGODB_URI)
 .catch((error) => {
     console.log(error);
 });
-
